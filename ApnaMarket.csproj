@@ -223,6 +223,16 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessEntity\BusinessEntity.csproj">
+      <Project>{BFD7B8E2-8EE4-466E-8BC8-BD84B115A40A}</Project>
+      <Name>BusinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoggerService\LoggerService.csproj">
+      <Project>{CF076D94-686B-422E-BE14-517B58A6C9BC}</Project>
+      <Name>LoggerService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
