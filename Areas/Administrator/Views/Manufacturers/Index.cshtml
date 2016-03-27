@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+@section styles
+{
+    @*<link href="@Url.Content("/content/themes/base/jquery-ui.css")" rel="stylesheet" media="screen">*@
+    <link href="@Url.Content("/datatables/dataTables.bootstrap.css")" rel="stylesheet" media="screen">
+    <link href="@Url.Content("/datatables/css/jquery.dataTables.min.css")" rel="stylesheet" media="screen">
+}
+@section scripts
+{
+    <script src="@Url.Content("/datatables/js/jquery.dataTables.min.js")"></script>
+}
+
+<div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right"><a href="@Url.Action("Add", "Manufacturers")" data-toggle="tooltip" title="Add New" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+        <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger" onclick="confirm('Are you sure?') ? $('#form-manufacturer').submit() : false;"><i class="fa fa-trash-o"></i></button>
+      </div>
+      <h1>Manufacturers</h1>
+      <ul class="breadcrumb">
+                <li><a href="@Url.Action("Index", "DashBoard")">Home</a></li>
+                <li><a href="@Url.Action("Index", "Manufacturers")">Manufacturers</a></li>
+              </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+            <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-list"></i> Manufacturer List</h3>
+      </div>
+      <div class="panel-body">
+          <div class="table-responsive">
+             <table class="table table-bordered table-hover" id="table" cellpadding="0" cellspacing="0"
+                        border="0">
+              <thead>
+                <tr>
+                  <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
+                  <td class="text-left">                    <a href="http://localhost:83/opencart/admin/index.php?route=catalog/manufacturer&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=name&amp;order=DESC" class="asc">Manufacturer Name</a>
+                    </td>
+                  <td class="text-right">                    <a href="http://localhost:83/opencart/admin/index.php?route=catalog/manufacturer&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=sort_order&amp;order=DESC">Sort Order</a>
+                    </td>
+                  <td class="text-right">Action</td>
+                </tr>
+              </thead>
+              <tbody>
+                                                <tr>
+                  <td class="text-center">                    <input type="checkbox" name="selected[]" value="8" />
+                    </td>
+                  <td class="text-left">Apple</td>
+                  <td class="text-right">0</td>
+                  <td class="text-right"><a href="http://localhost:83/opencart/admin/index.php?route=catalog/manufacturer/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;manufacturer_id=8" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                </tr>
+                                <tr>
+                  <td class="text-center">                    <input type="checkbox" name="selected[]" value="9" />
+                    </td>
+                  <td class="text-left">Canon</td>
+                  <td class="text-right">0</td>
+                  <td class="text-right"><a href="http://localhost:83/opencart/admin/index.php?route=catalog/manufacturer/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;manufacturer_id=9" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                </tr>
+                                <tr>
+                  <td class="text-center">                    <input type="checkbox" name="selected[]" value="7" />
+                    </td>
+                  <td class="text-left">Hewlett-Packard</td>
+                  <td class="text-right">0</td>
+                  <td class="text-right"><a href="http://localhost:83/opencart/admin/index.php?route=catalog/manufacturer/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;manufacturer_id=7" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                </tr>
+                                <tr>
+                  <td class="text-center">                    <input type="checkbox" name="selected[]" value="5" />
+                    </td>
+                  <td class="text-left">HTC</td>
+                  <td class="text-right">0</td>
+                  <td class="text-right"><a href="http://localhost:83/opencart/admin/index.php?route=catalog/manufacturer/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;manufacturer_id=5" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                </tr>
+                                <tr>
+                  <td class="text-center">                    <input type="checkbox" name="selected[]" value="6" />
+                    </td>
+                  <td class="text-left">Palm</td>
+                  <td class="text-right">0</td>
+                  <td class="text-right"><a href="http://localhost:83/opencart/admin/index.php?route=catalog/manufacturer/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;manufacturer_id=6" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                </tr>
+                                <tr>
+                  <td class="text-center">                    <input type="checkbox" name="selected[]" value="10" />
+                    </td>
+                  <td class="text-left">Sony</td>
+                  <td class="text-right">0</td>
+                  <td class="text-right"><a href="http://localhost:83/opencart/admin/index.php?route=catalog/manufacturer/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;manufacturer_id=10" data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                </tr>
+                                              </tbody>
+            </table>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+<script>    $(document).ready(function () {
+
+        try {
+            //           $('#dataTable').DataTable({
+            //               'aoColumnDefs': [{
+            //                   'bSortable': false, 'aTargets': ['nosort']
+            //               }],
+            //               "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
+            //               "iDisplayLength": 25,
+            //               "scrollY": "300px",
+            //               "scrollCollapse": true,
+            //               "paging": true
+            //           });
+
+            $('#table').DataTable({
+                "scrollY": "200px",
+                "scrollCollapse": true,
+                "paging": false
+            });
+
+        }
+        catch (e) {
+            alert(e);
+        }
+    });
+  </script>

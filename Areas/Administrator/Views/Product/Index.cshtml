@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+@section styles
+{
+    @*<link href="@Url.Content("/content/themes/base/jquery-ui.css")" rel="stylesheet" media="screen">*@
+    <link href="@Url.Content("/datatables/dataTables.bootstrap.css")" rel="stylesheet" media="screen">
+    <link href="@Url.Content("/datatables/css/jquery.dataTables.min.css")" rel="stylesheet" media="screen">
+}
+@section scripts
+{
+    <script src="@Url.Content("/datatables/js/jquery.dataTables.min.js")"></script>
+}
+<div class="page-header">
+    <div class="container-fluid">
+        <div class="pull-right">
+            <a href="@Url.Action("Add", "Product")"
+                data-toggle="tooltip" title="Add New" class="btn btn-primary"><i class="fa fa-plus">
+                </i></a>
+            <button type="button" data-toggle="tooltip" title="Copy" class="btn btn-default"
+                onclick="$('#form-product').attr('action', 'route=catalog/product/copy&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz').submit()">
+                <i class="fa fa-copy"></i>
+            </button>
+            <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger"
+                onclick="confirm('Are you sure?') ? $('#form-product').submit() : false;">
+                <i class="fa fa-trash-o"></i>
+            </button>
+        </div>
+        <h1>
+            Products</h1>
+        <ul class="breadcrumb">
+            <li><a href="@Url.Action("Add", "Product")">Home</a></li>
+            <li><a href="@Url.Action("Index", "Product")">Products</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-list"></i>Product List</h3>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="input-name">
+                                Category</label>
+                            <input type="text" name="filter_name" value="" placeholder="Category Name" id="input-name"
+                                class="form-control" />
+                        </div>
+                    </div>
+                     <div class="col-sm-4">
+                       
+                        <div class="form-group">
+                            <label class="control-label" for="input-model">
+                                Model</label>
+                            <input type="text" name="filter_model" value="" placeholder="Model" id="input-model"
+                                class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label" for="input-status">
+                                Status</label>
+                            <select name="filter_status" id="input-status" class="form-control">
+                                <option value="*"></option>
+                                <option value="1">Enabled</option>
+                                <option value="0">Disabled</option>
+                            </select>
+                        </div>
+                        <button type="button" id="button-filter" class="btn btn-primary pull-right">
+                            <i class="fa fa-search"></i>Filter</button>
+                    </div>
+                </div>
+            </div>
+            <div id="divPartial">
+            @Html.Partial("_PList")
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function LoadPartialView(parentCtrl, type, parentId) {
+
+        parentId = 0;
+        if (type == "Subject") {
+            parentId = -1;
+        }
+        else {
+            parentId = $("#" + parentCtrl).val();
+        }
+
+        var requestData = {
+            parentId: parentId,
+            type: type
+        };
+        //        var d = new FormData()
+        //        d.append("parentId", parentId);
+        //        d.append("type", type);
+
+        CustomFunction.LoadPartialView(requestData, @Url.Action("BindProductPartial","Product"), 'divPartial');
+    }
+
+
+</script>

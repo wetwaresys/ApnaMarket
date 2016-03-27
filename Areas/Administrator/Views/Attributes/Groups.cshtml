@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Groups";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+@section styles
+{
+    @*<link href="@Url.Content("/content/themes/base/jquery-ui.css")" rel="stylesheet" media="screen">*@
+    <link href="@Url.Content("/datatables/dataTables.bootstrap.css")" rel="stylesheet" media="screen">
+    <link href="@Url.Content("/datatables/css/jquery.dataTables.min.css")" rel="stylesheet" media="screen">
+}
+@section scripts
+{
+    <script src="@Url.Content("/datatables/js/jquery.dataTables.min.js")"></script>
+}
+<div class="page-header">
+    <div class="container-fluid">
+        <div class="pull-right">
+            <a href="@Url.Action("Add", "Attributes")" data-toggle="tooltip" title="Add New" class="btn btn-primary">
+                <i class="fa fa-plus"></i></a>
+            <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger"
+                onclick="confirm('Are you sure?') ? $('#form-attribute-group').submit() : false;">
+                <i class="fa fa-trash-o"></i>
+            </button>
+        </div>
+        <h1>
+            Attribute Groups</h1>
+        <ul class="breadcrumb">
+            <li><a href="@Url.Action("Add", "Attributes")">Home</a></li>
+            <li><a href="@Url.Action("Groups", "Attributes")">Attribute Groups</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-list"></i>Attribute Group List</h3>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="table" cellpadding="0" cellspacing="0"
+                    border="0">
+                    <thead>
+                        <tr>
+                            <td style="width: 1px;" class="text-center">
+                                <input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" />
+                            </td>
+                            <td class="text-left">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/attribute_group&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=agd.name&amp;order=DESC"
+                                    class="asc">Attribute Group Name</a>
+                            </td>
+                            <td class="text-right">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/attribute_group&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=ag.sort_order&amp;order=DESC">
+                                    Sort Order</a>
+                            </td>
+                            <td class="text-right">
+                                Action
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <input type="checkbox" name="selected[]" value="3" />
+                            </td>
+                            <td class="text-left">
+                                Memory
+                            </td>
+                            <td class="text-right">
+                                2
+                            </td>
+                            <td class="text-right">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/attribute_group/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;attribute_group_id=3"
+                                    data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil">
+                                    </i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <input type="checkbox" name="selected[]" value="5" />
+                            </td>
+                            <td class="text-left">
+                                Motherboard
+                            </td>
+                            <td class="text-right">
+                                3
+                            </td>
+                            <td class="text-right">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/attribute_group/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;attribute_group_id=5"
+                                    data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil">
+                                    </i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <input type="checkbox" name="selected[]" value="6" />
+                            </td>
+                            <td class="text-left">
+                                Processor
+                            </td>
+                            <td class="text-right">
+                                4
+                            </td>
+                            <td class="text-right">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/attribute_group/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;attribute_group_id=6"
+                                    data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil">
+                                    </i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <input type="checkbox" name="selected[]" value="4" />
+                            </td>
+                            <td class="text-left">
+                                Technical
+                            </td>
+                            <td class="text-right">
+                                1
+                            </td>
+                            <td class="text-right">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/attribute_group/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;attribute_group_id=4"
+                                    data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil">
+                                    </i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>    $(document).ready(function () {
+
+        try {
+            //           $('#dataTable').DataTable({
+            //               'aoColumnDefs': [{
+            //                   'bSortable': false, 'aTargets': ['nosort']
+            //               }],
+            //               "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
+            //               "iDisplayLength": 25,
+            //               "scrollY": "300px",
+            //               "scrollCollapse": true,
+            //               "paging": true
+            //           });
+
+            $('#table').DataTable({
+                "scrollY": "200px",
+                "scrollCollapse": true,
+                "paging": false
+            });
+
+        }
+        catch (e) {
+            alert(e);
+        }
+    });
+</script>

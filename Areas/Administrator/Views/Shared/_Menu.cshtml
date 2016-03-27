@@ -1,0 +1,152 @@
+﻿<ul id="menu">
+  <li id="dashboard"><a href="?route=common/dashboard&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx"><i class="fa fa-dashboard fa-fw"></i> <span>Dashboard</span></a></li>
+  <li id="catalog"><a class="parent"><i class="fa fa-tags fa-fw"></i> <span>Catalog</span></a>
+    <ul>
+      <li><a href="@Url.Action("Index","Category")">Categories</a></li>
+      <li><a href="@Url.Action("Index","Product")">Products</a></li>
+      <li><a class="parent">Attributes</a>
+        <ul>
+          <li><a href="@Url.Action("Index", "Attributes")">Attributes</a></li>
+          <li><a href="@Url.Action("Groups", "Attributes")">Attribute Groups</a></li>
+        </ul>
+      </li>
+      <li><a href="@Url.Action("Index", "Manufacturers")">Manufacturers</a></li>
+      <li><a href="@Url.Action("Index", "Review")">Reviews</a></li>
+      <li><a href="@Url.Action("Index", "Information")">Information</a></li>
+    </ul>
+  </li>
+  <li id="extension"><a class="parent"><i class="fa fa-puzzle-piece fa-fw"></i> <span>Extensions</span></a>
+    <ul>
+      <li><a href="?route=extension/installer&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Extension Installer</a></li>
+      <li><a href="?route=extension/modification&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Modifications</a></li>
+      <li><a href="?route=extension/theme&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Themes</a></li>
+      <li><a href="?route=extension/analytics&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Analytics</a></li>
+      <li><a href="?route=extension/captcha&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Captcha</a></li>
+      <li><a href="?route=extension/feed&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Feeds</a></li>
+      <li><a href="?route=extension/fraud&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Anti-Fraud</a></li>
+      <li><a href="?route=extension/module&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Modules</a></li>
+      <li><a href="?route=extension/payment&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Payments</a></li>
+      <li><a href="?route=extension/shipping&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Shipping</a></li>
+      <li><a href="?route=extension/total&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Order Totals</a></li>
+          </ul>
+  </li>
+  <li id="design"><a class="parent"><i class="fa fa-television fa-fw"></i> <span>Design</span></a>
+    <ul>
+      
+      <li><a href="@Url.Action("Index","Product")">Banners</a></li>
+    </ul>
+  </li>
+  <li id="sale"><a class="parent"><i class="fa fa-shopping-cart fa-fw"></i> <span>Sales</span></a>
+    <ul>
+      <li><a href="@Url.Action("Index","Product")">Orders</a></li>
+      <li><a href="@Url.Action("Index","Product")">Recurring Orders</a></li>
+      <li><a href="@Url.Action("Index","Product")">Returns</a></li>
+      <li><a class="parent">Gift Vouchers</a>
+        <ul>
+          <li><a href="@Url.Action("Index","Product")">Gift Vouchers</a></li>
+          <li><a href="@Url.Action("Index","Product")">Voucher Themes</a></li>
+        </ul>
+      </li>
+      <li><a class="parent">PayPal</a>
+        <ul>
+          <li><a href="?route=payment/pp_express/search&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Search</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li id="customer"><a class="parent"><i class="fa fa-user fa-fw"></i> <span>Customers</span></a>
+    <ul>
+      <li><a href="@Url.Action("Index","Product")">Customers</a></li>
+      <li><a href="@Url.Action("Index","Product")">Customer Groups</a></li>
+      <li><a href="@Url.Action("Index","Product")">Custom Fields</a></li>
+    </ul>
+  </li>
+  <li><a class="parent"><i class="fa fa-share-alt fa-fw"></i> <span>Marketing</span></a>
+    <ul>
+      <li><a href="@Url.Action("Index","Product")">Marketing</a></li>
+      <li><a href="@Url.Action("Index","Product")">Coupons</a></li>
+      <li><a href="@Url.Action("Index","Product")">Mail</a></li>
+    </ul>
+  </li>
+  <li id="system"><a class="parent"><i class="fa fa-cog fa-fw"></i> <span>System</span></a>
+    <ul>
+      <li><a href="?route=setting/store&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Settings</a></li>
+      <li><a class="parent">Users</a>
+        <ul>
+          <li><a href="@Url.Action("Index","Product")">Users</a></li>
+          <li><a href="@Url.Action("Index","Product")">User Groups</a></li>
+          <li><a href="?route=user/api&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">API</a></li>
+        </ul>
+      </li>
+      <li><a class="parent">Localisation</a>
+        <ul>
+          <li><a href="@Url.Action("Index","Product")">Store Location</a></li>
+          <li><a href="@Url.Action("Index","Product")">Languages</a></li>
+          <li><a href="@Url.Action("Index","Product")">Currencies</a></li>
+          <li><a href="@Url.Action("Index","Product")">Stock Statuses</a></li>
+          <li><a href="@Url.Action("Index","Product")">Order Statuses</a></li>
+          <li><a class="parent">Returns</a>
+            <ul>
+              <li><a href="@Url.Action("Index","Product")">Return Statuses</a></li>
+              <li><a href="@Url.Action("Index","Product")">Return Actions</a></li>
+              <li><a href="@Url.Action("Index","Product")">Return Reasons</a></li>
+            </ul>
+          </li>
+          <li><a href="@Url.Action("Index","Product")">Countries</a></li>
+          <li><a href="@Url.Action("Index","Product")">Zones</a></li>
+          <li><a href="@Url.Action("Index","Product")">Geo Zones</a></li>
+          <li><a class="parent">Taxes</a>
+            <ul>
+              <li><a href="?route=localisation/tax_class&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Tax Classes</a></li>
+              <li><a href="@Url.Action("Index","Product")">Tax Rates</a></li>
+            </ul>
+          </li>
+          <li><a href="?route=localisation/length_class&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Length Classes</a></li>
+          <li><a href="?route=localisation/weight_class&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Weight Classes</a></li>
+        </ul>
+      </li>
+      <li><a class="parent">Tools</a>
+        <ul>
+          <li><a href="?route=tool/upload&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Uploads</a></li>
+          <li><a href="?route=tool/backup&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Backup / Restore</a></li>
+          <li><a href="?route=tool/error_log&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Error Logs</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li id="reports"><a class="parent"><i class="fa fa-bar-chart-o fa-fw"></i> <span>Reports</span></a>
+    <ul>
+      <li><a class="parent">Sales</a>
+        <ul>
+          <li><a href="@Url.Action("Index","Product")">Orders</a></li>
+          <li><a href="@Url.Action("Index","Product")">Tax</a></li>
+          <li><a href="@Url.Action("Index","Product")">Shipping</a></li>
+          <li><a href="@Url.Action("Index","Product")">Returns</a></li>
+          <li><a href="@Url.Action("Index","Product")">Coupons</a></li>
+        </ul>
+      </li>
+      <li><a class="parent">Products</a>
+        <ul>
+          <li><a href="@Url.Action("Index","Product")">Viewed</a></li>
+          <li><a href="@Url.Action("Index","Product")">Purchased</a></li>
+        </ul>
+      </li>
+      <li><a class="parent">Customers</a>
+        <ul>
+          <li><a href="@Url.Action("Index","Product")">Customers Online</a></li>
+          <li><a href="@Url.Action("Index","Product")">Customer Activity</a></li>
+          <li><a href="@Url.Action("Index","Product")">Orders</a></li>
+          <li><a href="@Url.Action("Index","Product")">Reward Points</a></li>
+          <li><a href="@Url.Action("Index","Product")">Credit</a></li>
+        </ul>
+      </li>
+      <li><a class="parent">Marketing</a>
+        <ul>
+          <li><a href="@Url.Action("Index","Product")">Marketing</a></li>
+          <li><a href="@Url.Action("Index","Product")">Affiliates</a></li>
+          <li><a href="@Url.Action("Index","Product")">Affiliate Activity</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>

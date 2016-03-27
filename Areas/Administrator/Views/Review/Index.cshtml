@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+@section styles
+{
+    @*<link href="@Url.Content("/content/themes/base/jquery-ui.css")" rel="stylesheet" media="screen">*@
+    <link href="@Url.Content("/datatables/dataTables.bootstrap.css")" rel="stylesheet" media="screen">
+    <link href="@Url.Content("/datatables/css/jquery.dataTables.min.css")" rel="stylesheet" media="screen">
+}
+@section scripts
+{
+    <script src="@Url.Content("/datatables/js/jquery.dataTables.min.js")"></script>
+}
+<div class="page-header">
+    <div class="container-fluid">
+        <div class="pull-right">
+            <a href="@Url.Action("Add", "Review")" data-toggle="tooltip" title="Add New" class="btn btn-primary">
+                <i class="fa fa-plus"></i></a>
+            <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-danger"
+                onclick="confirm('Are you sure?') ? $('#form-review').submit() : false;">
+                <i class="fa fa-trash-o"></i>
+            </button>
+        </div>
+        <h1>
+            Reviews</h1>
+        <ul class="breadcrumb">
+            <li><a href="@Url.Action("Index", "DashBoard")">Home</a></li>
+            <li><a href="@Url.Action("Index", "Review")">Reviews</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-list"></i>Review List</h3>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="table" cellpadding="0" cellspacing="0"
+                    border="0">
+                    <thead>
+                        <tr>
+                            <td style="width: 1px;" class="text-center">
+                                <input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" />
+                            </td>
+                            <td class="text-left">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/review&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=pd.name&amp;order=ASC">
+                                    Product</a>
+                            </td>
+                            <td class="text-left">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/review&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=r.author&amp;order=ASC">
+                                    Author</a>
+                            </td>
+                            <td class="text-right">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/review&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=r.rating&amp;order=ASC">
+                                    Rating</a>
+                            </td>
+                            <td class="text-left">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/review&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=r.status&amp;order=ASC">
+                                    Status</a>
+                            </td>
+                            <td class="text-left">
+                                <a href="http://localhost:83/opencart/admin/index.php?route=catalog/review&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=r.date_added&amp;order=ASC"
+                                    class="desc">Date Added</a>
+                            </td>
+                            <td class="text-right">
+                                Action
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center" colspan="7">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>    $(document).ready(function () {
+
+        try {
+            //           $('#dataTable').DataTable({
+            //               'aoColumnDefs': [{
+            //                   'bSortable': false, 'aTargets': ['nosort']
+            //               }],
+            //               "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "All"]],
+            //               "iDisplayLength": 25,
+            //               "scrollY": "300px",
+            //               "scrollCollapse": true,
+            //               "paging": true
+            //           });
+
+            $('#table').DataTable({
+                "scrollY": "200px",
+                "scrollCollapse": true,
+                "paging": false
+            });
+
+        }
+        catch (e) {
+            alert(e);
+        }
+    });
+</script>

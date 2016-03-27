@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+<div class="page-header">
+    <div class="container-fluid">
+        <div class="pull-right">
+            <button type="submit" form="formData" data-toggle="tooltip" title="Save"
+                class="btn btn-primary">
+                <i class="fa fa-save"></i>
+            </button>
+            <a href="@Url.Action("Index", "Manufacturers")"
+                data-toggle="tooltip" title="Cancel" class="btn btn-default"><i class="fa fa-reply">
+                </i></a>
+        </div>
+        <h1>
+            Manufacturers</h1>
+        <ul class="breadcrumb">
+            <li><a href="@Url.Action("Index", "DashBoard")">Home</a></li>
+            <li><a href="@Url.Action("Index", "Manufacturers")">Manufacturers</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <i class="fa fa-pencil"></i>Add Manufacturer</h3>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm("Add", "Category", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "formData", @class = "form-horizontal" }))
+            {
+                <div class="form-group required">
+                    <label class="col-sm-2 control-label" for="input-name">
+                        Manufacturer Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name" value="" placeholder="Manufacturer Name" id="input-name"
+                            class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                        Stores</label>
+                    <div class="col-sm-10">
+                        <div class="well well-sm" style="height: 150px; overflow: auto;">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="manufacturer_store[]" value="0" checked="checked" />
+                                    Default
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-keyword">
+                        <span data-toggle="tooltip" title="Do not use spaces, instead replace spaces with - and make sure the SEO URL is globally unique.">
+                            SEO URL</span></label>
+                    <div class="col-sm-10">
+                        <input type="text" name="keyword" value="" placeholder="SEO URL" id="input-keyword"
+                            class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-image">
+                        Image</label>
+                    <div class="col-sm-10">
+                        <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail">
+                            <img src="http://localhost:83/opencart/image/cache/no_image-100x100.png" alt="" title=""
+                                data-placeholder="http://localhost:83/opencart/image/cache/no_image-100x100.png" /></a>
+                        <input type="hidden" name="image" value="" id="input-image" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-sort-order">
+                        Sort Order</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="sort_order" value="" placeholder="Sort Order" id="input-sort-order"
+                            class="form-control" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -36,3 +36,9 @@ D:\ECommerce\Working Project\ApnaMarket\ApnaMarket\ApnaMarket\bin\BusinessEntity
 D:\ECommerce\Working Project\ApnaMarket\ApnaMarket\ApnaMarket\bin\LoggerService.dll
 D:\ECommerce\Working Project\ApnaMarket\ApnaMarket\ApnaMarket\bin\BusinessEntity.pdb
 D:\ECommerce\Working Project\ApnaMarket\ApnaMarket\ApnaMarket\bin\LoggerService.pdb
+D:\ECommerce\Working Project\ApnaMarket\ApnaMarket\ApnaMarket\bin\DAL.dll
+D:\ECommerce\Working Project\ApnaMarket\ApnaMarket\ApnaMarket\bin\MySql.Data.dll
+D:\ECommerce\Working Project\ApnaMarket\ApnaMarket\ApnaMarket\bin\MySql.Data.Entity.dll
+D:\ECommerce\Working Project\ApnaMarket\ApnaMarket\ApnaMarket\bin\PersistanceLayer.dll
+D:\ECommerce\Working Project\ApnaMarket\ApnaMarket\ApnaMarket\bin\DAL.pdb
+D:\ECommerce\Working Project\ApnaMarket\ApnaMarket\ApnaMarket\bin\PersistanceLayer.pdb
