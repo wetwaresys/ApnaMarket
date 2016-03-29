@@ -132,19 +132,25 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
     <Compile Include="Areas\Administrator\Controllers\AttributesController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\BannersController.cs" />
     <Compile Include="Areas\Administrator\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Administrator\Controllers\InformationController.cs" />
     <Compile Include="Areas\Administrator\Controllers\ManufacturersController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Administrator\Controllers\ProductController.cs" />
     <Compile Include="Areas\Administrator\Controllers\ReviewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\HomePageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\SiteCss\stylesheet.css" />
     <Content Include="Content\stylesheet.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -219,8 +225,58 @@
     <Content Include="datatables\js\jquery.dataTables.min.js" />
     <Content Include="datatables\js\jquery.js" />
     <Content Include="Global.asax" />
+    <Content Include="Image\banners\iPhone6-1140x380.jpg" />
+    <Content Include="Image\banners\MacBookAir-1140x380.jpg" />
     <Content Include="Image\checkmark.png" />
+    <Content Include="Image\demo\banners\iPhone6-1140x380.jpg" />
+    <Content Include="Image\demo\banners\MacBookAir-1140x380.jpg" />
+    <Content Include="Image\demo\iphone_2-500x500.jpg" />
+    <Content Include="Image\demo\iphone_3-500x500.jpg" />
+    <Content Include="Image\demo\iphone_3-74x74.jpg" />
+    <Content Include="Image\demo\iphone_4-500x500.jpg" />
+    <Content Include="Image\demo\iphone_4-74x74.jpg" />
+    <Content Include="Image\demo\iphone_5-500x500.jpg" />
+    <Content Include="Image\demo\iphone_5-74x74.jpg" />
+    <Content Include="Image\demo\iphone_6-500x500.jpg" />
+    <Content Include="Image\demo\iphone_6-74x74.jpg" />
+    <Content Include="Image\demo\ipod_classic_1-40x40.jpg" />
+    <Content Include="Image\demo\ipod_nano_1-40x40.jpg" />
+    <Content Include="Image\demo\ipod_shuffle_1-40x40.jpg" />
+    <Content Include="Image\demo\ipod_touch_1-40x40.jpg" />
+    <Content Include="Image\demo\macbook_1-200x200.jpg" />
+    <Content Include="Image\demo\macbook_1-40x40.jpg" />
+    <Content Include="Image\demo\macbook_air_1-40x40.jpg" />
+    <Content Include="Image\demo\macbook_pro_1-40x40.jpg" />
+    <Content Include="Image\demo\manufacturer\burgerking-130x100.png" />
+    <Content Include="Image\demo\manufacturer\canon-130x100.png" />
+    <Content Include="Image\demo\manufacturer\cocacola-130x100.png" />
+    <Content Include="Image\demo\manufacturer\dell-130x100.png" />
+    <Content Include="Image\demo\manufacturer\disney-130x100.png" />
+    <Content Include="Image\demo\manufacturer\harley-130x100.png" />
+    <Content Include="Image\demo\manufacturer\nfl-130x100.png" />
+    <Content Include="Image\demo\manufacturer\nintendo-130x100.png" />
+    <Content Include="Image\demo\manufacturer\redbull-130x100.png" />
+    <Content Include="Image\demo\manufacturer\sony-130x100.png" />
+    <Content Include="Image\demo\manufacturer\starbucks-130x100.png" />
+    <Content Include="Image\demo\nikon_d300_1-228x228.jpg" />
+    <Content Include="Image\demo\nikon_d300_1-40x40.jpg" />
+    <Content Include="Image\demo\palm_treo_pro_1-228x228.jpg" />
+    <Content Include="Image\demo\palm_treo_pro_1-40x40.jpg" />
+    <Content Include="Image\demo\samsung_syncmaster_941bw-40x40.jpg" />
+    <Content Include="Image\demo\samsung_tab_1-40x40.jpg" />
+    <Content Include="Image\demo\sony_vaio_1-40x40.jpg" />
     <Content Include="Image\logo.png" />
+    <Content Include="Image\manufacturer\burgerking-130x100.png" />
+    <Content Include="Image\manufacturer\canon-130x100.png" />
+    <Content Include="Image\manufacturer\cocacola-130x100.png" />
+    <Content Include="Image\manufacturer\dell-130x100.png" />
+    <Content Include="Image\manufacturer\disney-130x100.png" />
+    <Content Include="Image\manufacturer\harley-130x100.png" />
+    <Content Include="Image\manufacturer\nfl-130x100.png" />
+    <Content Include="Image\manufacturer\nintendo-130x100.png" />
+    <Content Include="Image\manufacturer\redbull-130x100.png" />
+    <Content Include="Image\manufacturer\sony-130x100.png" />
+    <Content Include="Image\manufacturer\starbucks-130x100.png" />
     <Content Include="Image\payment\2checkout.png" />
     <Content Include="Image\payment\amazon.png" />
     <Content Include="Image\payment\authorizenet.png" />
@@ -253,6 +309,7 @@
     <Content Include="Scripts\bootstrap\js\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap\js\npm.js" />
     <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\common_Site.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\font-awesome\css\font-awesome.css" />
     <Content Include="Scripts\font-awesome\css\font-awesome.min.css" />
@@ -370,7 +427,16 @@
     <Content Include="Scripts\jquery\jqvmap\maps\jquery.vmap.world.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\magnific\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\magnific\magnific-popup.css" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\owl-carousel\AjaxLoader.gif" />
+    <Content Include="Scripts\owl-carousel\grabbing.png" />
+    <Content Include="Scripts\owl-carousel\owl.carousel.css" />
+    <Content Include="Scripts\owl-carousel\owl.carousel.js" />
+    <Content Include="Scripts\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Scripts\owl-carousel\owl.theme.css" />
+    <Content Include="Scripts\owl-carousel\owl.transitions.css" />
     <Content Include="Scripts\summernote\lang\summernote-ar-AR.js" />
     <Content Include="Scripts\summernote\lang\summernote-bg-BG.js" />
     <Content Include="Scripts\summernote\lang\summernote-ca-ES.js" />
@@ -428,7 +494,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrator\Models\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -476,6 +541,11 @@
     <Content Include="Areas\Administrator\Views\Review\Add.cshtml" />
     <Content Include="Areas\Administrator\Views\Information\Index.cshtml" />
     <Content Include="Areas\Administrator\Views\Information\Add.cshtml" />
+    <Content Include="Areas\Administrator\Views\Banners\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\Banners\Add.cshtml" />
+    <Content Include="Areas\Administrator\Views\Orders\Index.cshtml" />
+    <Content Include="Areas\Administrator\Views\Orders\_orderList.cshtml" />
+    <Content Include="Areas\Administrator\Views\Orders\Add.cshtml" />
     <None Include="Content\sass\bootstrap\mixins\_alerts.scss" />
     <None Include="Content\sass\bootstrap\mixins\_background-variant.scss" />
     <None Include="Content\sass\bootstrap\mixins\_border-radius.scss" />
@@ -627,6 +697,15 @@
     <None Include="Scripts\jquery\flot\README.md" />
     <None Include="Scripts\jquery\jquery-2.1.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Shared\_top.cshtml" />
+    <Content Include="Views\Shared\_topMenu.cshtml" />
+    <Content Include="Views\Shared\_leftMenu.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\_productBox.cshtml" />
+    <Content Include="Views\Shared\_cartOnFly.cshtml" />
+    <Content Include="Views\Product\_HomeProduct.cshtml" />
+    <Content Include="Views\Home\_Banner.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

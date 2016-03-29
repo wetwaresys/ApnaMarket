@@ -1,0 +1,79 @@
+﻿<div id="cart" class="btn-group btn-block">
+    <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn btn-inverse btn-block btn-lg dropdown-toggle"
+        aria-expanded="true">
+        <span id="cart-total"><i class="fa fa-shopping-cart"></i>1 item(s) - $602.00</span></button>
+    <ul class="dropdown-menu pull-right">
+        <li>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            <a href="http://localhost:83/opencart/index.php?route=product/product&amp;product_id=43">
+                                <img src="http://localhost:83/opencart/image/cache/catalog/demo/macbook_1-47x47.jpg"
+                                    alt="MacBook" title="MacBook" class="img-thumbnail"></a>
+                        </td>
+                        <td class="text-left">
+                            <a href="http://localhost:83/opencart/index.php?route=product/product&amp;product_id=43">
+                                MacBook</a>
+                        </td>
+                        <td class="text-right">
+                            x 1
+                        </td>
+                        <td class="text-right">
+                            $602.00
+                        </td>
+                        <td class="text-center">
+                            <button type="button" onclick="cart.remove('1');" title="Remove" class="btn btn-danger btn-xs">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <div>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">
+                                <strong>Sub-Total</strong>
+                            </td>
+                            <td class="text-right">
+                                $500.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                <strong>Eco Tax (-2.00)</strong>
+                            </td>
+                            <td class="text-right">
+                                $2.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                <strong>VAT (20%)</strong>
+                            </td>
+                            <td class="text-right">
+                                $100.00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-right">
+                                <strong>Total</strong>
+                            </td>
+                            <td class="text-right">
+                                $602.00
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-right">
+                    <a href="http://localhost:83/opencart/index.php?route=checkout/cart"><strong><i class="fa fa-shopping-cart">
+                    </i>View Cart</strong></a>&nbsp;&nbsp;&nbsp;<a href="http://localhost:83/opencart/index.php?route=checkout/checkout"><strong><i
+                        class="fa fa-share"></i> Checkout</strong></a></p>
+            </div>
+        </li>
+    </ul>
+</div>

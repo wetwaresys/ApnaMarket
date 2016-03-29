@@ -1,0 +1,55 @@
+﻿@model List<am_banner>
+@using BusinessEntity;
+<div id="myCarousel" class="carousel slide" style="opacity: 1;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            if (i == 0)
+            {
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            }
+            else
+            {
+                if (Model[i].BannerImage.Count > 0)
+                {
+            <li data-target="#myCarousel" data-slide-to="@i"></li>
+                }
+            }
+        }
+    </ol>
+    <div class="carousel-inner">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            if (Model[i].BannerImage.Count > 0)
+            {
+            <div class="item @(i == 0 ? "active" : "")">
+                <img src="@Model[i].BannerImage[0].image"
+                    style="width: 100%" alt="MacBookAir" class="img-responsive" />
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>
+                            @Model[i].name</h1>
+                        <p>
+                            @Model[i].BannerImage[0].Title</p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="@Model[i].BannerImage[0].link">Learn More</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            }
+        }
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="icon-prev">
+    </span></a><a class="right carousel-control" href="#myCarousel" data-slide="next"><span
+        class="icon-next"></span></a>
+</div>
+<!-- /.carousel -->
+<script type="text/javascript"><!--
+    $('#myCarousel').carousel({
+        interval: 3000,
+        cycle: true
+    });
+--></script>

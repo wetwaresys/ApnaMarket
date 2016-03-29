@@ -1,0 +1,102 @@
+﻿<ul id="vmenu">
+  <li><a href="?route=common/dashboard&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx"><i class="fa fa-tags"></i> <span>Offers</span></a></li>
+  <li><a class="parent"><i class="fa fa-bomb"></i> <span>Special</span></a>
+  </li>
+  <li id="catalog"><a class="parent"><i class="fa fa-heartbeat"></i> <span>Ayurveda</span></a>
+    <ul>
+      <li><a href="@Url.Action("Index","Category")">Categories</a></li>
+      <li><a href="@Url.Action("Index","Product")">Products</a></li>
+      <li><a class="parent">Attributes</a>
+        <ul>
+          <li><a href="@Url.Action("Index", "Attributes")">Attributes</a></li>
+          <li><a href="@Url.Action("Groups", "Attributes")">Attribute Groups</a></li>
+        </ul>
+      </li>
+      <li><a href="@Url.Action("Index", "Manufacturers")">Manufacturers</a></li>
+      <li><a href="@Url.Action("Index", "Review")">Reviews</a></li>
+      <li><a href="@Url.Action("Index", "Information")">Information</a></li>
+    </ul>
+  </li>
+ 
+  <li id="design"><a class="parent"><i class="fa fa-book"></i> <span>Books</span></a>
+    <ul>
+      
+      <li><a href="@Url.Action("Index", "Banners")">Banners</a></li>
+    </ul>
+  </li>
+  <li id="sale"><a class="parent"><i class="fa fa-male"></i> <span>Mens</span></a>
+    <ul>
+      <li><a href="@Url.Action("Index", "Orders")">Foot Wear</a></li>
+      <li><a href="@Url.Action("Index","Product")">Trousers</a></li>
+      <li><a href="@Url.Action("Index","Product")">Shirts</a></li>
+      <li><a class="parent">T-Shirts</a>
+        <ul>
+          <li><a href="@Url.Action("Index","Product")">Half</a></li>
+          <li><a href="@Url.Action("Index","Product")">Full</a></li>
+        </ul>
+      </li>
+     
+    </ul>
+  </li>
+  <li id="customer"><a class="parent"><i class="fa fa-female"></i> <span>Ladies</span></a>
+    <ul>
+      <li><a href="@Url.Action("Index","Product")">Customers</a></li>
+      <li><a href="@Url.Action("Index","Product")">Customer Groups</a></li>
+      <li><a href="@Url.Action("Index","Product")">Custom Fields</a></li>
+    </ul>
+  </li>
+  <li><a class="parent"><i class="fa fa-mobile"></i> <span>Mobiles</span></a>
+    <ul>
+      <li><a href="@Url.Action("Index","Product")">Marketing</a></li>
+      <li><a href="@Url.Action("Index","Product")">Coupons</a></li>
+      <li><a href="@Url.Action("Index","Product")">Mail</a></li>
+    </ul>
+  </li>
+  <li id="system"><a class="parent"><i class="fa fa-television"></i> <span>Gadgets</span></a>
+    <ul>
+      <li><a href="?route=setting/store&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Settings</a></li>
+      <li><a class="parent">Users</a>
+        <ul>
+          <li><a href="@Url.Action("Index","Product")">Users</a></li>
+          <li><a href="@Url.Action("Index","Product")">User Groups</a></li>
+          <li><a href="?route=user/api&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">API</a></li>
+        </ul>
+      </li>
+      <li><a class="parent">Localisation</a>
+        <ul>
+          <li><a href="@Url.Action("Index","Product")">Store Location</a></li>
+          <li><a href="@Url.Action("Index","Product")">Languages</a></li>
+          <li><a href="@Url.Action("Index","Product")">Currencies</a></li>
+          <li><a href="@Url.Action("Index","Product")">Stock Statuses</a></li>
+          <li><a href="@Url.Action("Index","Product")">Order Statuses</a></li>
+          <li><a class="parent">Returns</a>
+            <ul>
+              <li><a href="@Url.Action("Index","Product")">Return Statuses</a></li>
+              <li><a href="@Url.Action("Index","Product")">Return Actions</a></li>
+              <li><a href="@Url.Action("Index","Product")">Return Reasons</a></li>
+            </ul>
+          </li>
+          <li><a href="@Url.Action("Index","Product")">Countries</a></li>
+          <li><a href="@Url.Action("Index","Product")">Zones</a></li>
+          <li><a href="@Url.Action("Index","Product")">Geo Zones</a></li>
+          <li><a class="parent">Taxes</a>
+            <ul>
+              <li><a href="?route=localisation/tax_class&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Tax Classes</a></li>
+              <li><a href="@Url.Action("Index","Product")">Tax Rates</a></li>
+            </ul>
+          </li>
+          <li><a href="?route=localisation/length_class&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Length Classes</a></li>
+          <li><a href="?route=localisation/weight_class&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Weight Classes</a></li>
+        </ul>
+      </li>
+      <li><a class="parent">Tools</a>
+        <ul>
+          <li><a href="?route=tool/upload&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Uploads</a></li>
+          <li><a href="?route=tool/backup&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Backup / Restore</a></li>
+          <li><a href="?route=tool/error_log&amp;token=mvisB37dBR50ffd2t4DJM0XfbqZqo5fx">Error Logs</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  
+</ul>

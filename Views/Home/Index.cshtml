@@ -1,6 +1,77 @@
-﻿@{
+﻿@model HomePageModel
+@using ApnaMarket.Models;
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Index</h2>
+<div class="row">
+    <div id="content" class="col-sm-12">
+        @if (Model.Banners.Count > 0)
+        {
+            @Html.Partial("/Views/Home/_Banner.cshtml", Model.Banners)
+        }
+        <h3>
+            Featured Products</h3>
+        <div class="row">
+            @if (Model.HomeProducts.Count > 0)
+            {
+                @Html.Partial("/Views/Product/_HomeProduct.cshtml", Model.HomeProducts)
+            }
+        </div>
+        <div id="carousel0" class="owl-carousel">
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/canon-130x100.png"
+                    alt="Canon" class="img-responsive" />
+            </div>
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/redbull-130x100.png"
+                    alt="RedBull" class="img-responsive" />
+            </div>
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/starbucks-130x100.png"
+                    alt="Starbucks" class="img-responsive" />
+            </div>
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/nfl-130x100.png"
+                    alt="NFL" class="img-responsive" />
+            </div>
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/harley-130x100.png"
+                    alt="Harley Davidson" class="img-responsive" />
+            </div>
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/dell-130x100.png"
+                    alt="Dell" class="img-responsive" />
+            </div>
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/disney-130x100.png"
+                    alt="Disney" class="img-responsive" />
+            </div>
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/cocacola-130x100.png"
+                    alt="Coca Cola" class="img-responsive" />
+            </div>
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/burgerking-130x100.png"
+                    alt="Burger King" class="img-responsive" />
+            </div>
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/sony-130x100.png"
+                    alt="Sony" class="img-responsive" />
+            </div>
+            <div class="item text-center">
+                <img src="http://localhost:83/opencart/image/cache/catalog/demo/manufacturer/nintendo-130x100.png"
+                    alt="Nintendo" class="img-responsive" />
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+            $('#carousel0').owlCarousel({
+                items: 6,
+                autoPlay: 3000,
+                navigation: true,
+                navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
+                pagination: true
+            });
+--></script>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+﻿<table class="table table-bordered table-hover" id="table" cellpadding="0" cellspacing="0"
+        border="0">
+    <thead>
+        <tr>
+            <td style="width: 1px;" class="text-center">
+                <input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" />
+            </td>
+            <td class="text-right">
+                <a href="http://localhost:83/opencart/admin/index.php?route=sale/order&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=o.order_id&amp;order=ASC"
+                    class="desc">Order ID</a>
+            </td>
+            <td class="text-left">
+                <a href="http://localhost:83/opencart/admin/index.php?route=sale/order&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=customer&amp;order=ASC">
+                    Customer</a>
+            </td>
+            <td class="text-left">
+                <a href="http://localhost:83/opencart/admin/index.php?route=sale/order&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=status&amp;order=ASC">
+                    Status</a>
+            </td>
+            <td class="text-right">
+                <a href="http://localhost:83/opencart/admin/index.php?route=sale/order&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=o.total&amp;order=ASC">
+                    Total</a>
+            </td>
+            <td class="text-left">
+                <a href="http://localhost:83/opencart/admin/index.php?route=sale/order&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=o.date_added&amp;order=ASC">
+                    Date Added</a>
+            </td>
+            <td class="text-left">
+                <a href="http://localhost:83/opencart/admin/index.php?route=sale/order&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;sort=o.date_modified&amp;order=ASC">
+                    Date Modified</a>
+            </td>
+            <td class="text-right">
+                Action
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-center">
+                <input type="checkbox" name="selected[]" value="1" />
+                <input type="hidden" name="shipping_code[]" value="flat.flat" />
+            </td>
+            <td class="text-right">
+                1
+            </td>
+            <td class="text-left">
+                shailendra pathak
+            </td>
+            <td class="text-left">
+                Pending
+            </td>
+            <td class="text-right">
+                $185.00
+            </td>
+            <td class="text-left">
+                27/03/2016
+            </td>
+            <td class="text-left">
+                27/03/2016
+            </td>
+            <td class="text-right">
+                <a href="http://localhost:83/opencart/admin/index.php?route=sale/order/info&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;order_id=1"
+                    data-toggle="tooltip" title="View" class="btn btn-info"><i class="fa fa-eye"></i>
+                </a><a href="http://localhost:83/opencart/admin/index.php?route=sale/order/edit&amp;token=Cl4CMERwlgW2LxhaTgWh9Cx05c0LTyQz&amp;order_id=1"
+                    data-toggle="tooltip" title="Edit" class="btn btn-primary"><i class="fa fa-pencil">
+                    </i></a>
+                <button type="button" value="1" id="button-delete1" data-loading-text="Loading..."
+                    data-toggle="tooltip" title="Delete" class="btn btn-danger">
+                    <i class="fa fa-trash-o"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<script>    $(document).ready(function () {
+
+        try {
+
+            $('#table').DataTable({
+                "scrollY": "200px",
+                "scrollCollapse": true,
+                "paging": false
+            });
+
+        }
+        catch (e) {
+            alert(e);
+        }
+    });
+</script>
